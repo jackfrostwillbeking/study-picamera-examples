@@ -10,11 +10,11 @@
 	</style>
   </head>
   <body>
-	<!--{% if message %}
+	{% if message %}
           <h2>{{message}}</h2>
-        {% endif %}-->
+        {% endif %}
 
-	<h2>Picamera feed</h2>
+	<!--<h2>Picamera feed</h2>-->
 	<img id="bg" src="{{ url_for('video_feed') }}">
   </body>
 </html>
