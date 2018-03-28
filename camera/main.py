@@ -4,6 +4,7 @@ from flask import Flask, render_template, Response
 from processor.motion_detector import MotionDetector as VideoCamera
 import time
 import threading
+import os
 
 video_camera = VideoCamera(flip=False)
 
@@ -12,8 +13,9 @@ app = Flask(__name__)
 
 @app.route('/')
 def index():
-    #message = 'sample_string'
-    return render_template('index.html')
+    CAMERA_DEMO = os.getenv('CAMERA_DEMO', 'Cannot load the env')
+    message = CAMERA_DEMO
+    return render_template('index.html', message=message)
 
 def gen(camera):
     while True:
