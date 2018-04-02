@@ -3,6 +3,7 @@ A collection of picamera example based on OpenCV
 
 # requirements
 
+connexio
 * python 2.7
 * OpenCV 2.4
 
