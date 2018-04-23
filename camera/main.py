@@ -70,7 +70,7 @@ def display(frame, decoded_objs):
                               (left, top),
                               (left + width, height + top),
                               (0, 0, 255), 2)
-        dic = b.decode(dic)
+        dic = dic.decode('utf-8')
 #         dic = dic[1:]
         cv2.putText(frame,dic,(left,top),cv2.FONT_HERSHEY_PLAIN, 2,(0, 0, 255))
 
