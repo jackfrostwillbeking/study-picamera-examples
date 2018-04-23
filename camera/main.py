@@ -27,11 +27,11 @@ app = Flask(__name__)
 
 @app.route('/')
 def index():
-    CAMERA_DEMO = os.getenv('CAMERA_DEMO', 'Cannot load the env')
-    message = CAMERA_DEMO
+#     CAMERA_DEMO = os.getenv('CAMERA_DEMO', 'Cannot load the env')
+#     message = CAMERA_DEMO
 #     return render_template('index.html', message=message)
     return Response(gen(),
-                    mimetype='multipart/x-mixed-replace; boundary=frame';render_template('index.html', message=message))
+                    mimetype='multipart/x-mixed-replace; boundary=frame')
 
 # def gen(camera):
 def gen():
