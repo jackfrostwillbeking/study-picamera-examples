@@ -56,7 +56,9 @@ def decode(frame):
         print(datetime.now().strftime('%H:%M:%S.%f'))
         print('Type: ', obj.type)
         print('Data: ', obj.data)
-    cv2.putText(frame,obj.data,(left,left - 1),cv2.FONT_HERSHEY_PLAIN, 3,(0, 0, 255))
+        dic[] = obj.data
+        
+    cv2.putText(frame,dic,(left,left - 1),cv2.FONT_HERSHEY_PLAIN, 3,(0, 0, 255))
 
     return decoded_objs
 
