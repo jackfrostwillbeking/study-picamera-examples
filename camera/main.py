@@ -56,6 +56,15 @@ def decode(frame):
         print('Data: ', obj.data)
     
     return decoded_objs
+
+def display(frame, decoded_objs):
+    for decoded_obj in decoded_objs:
+        left, top, width, height = decoded_obj.rect
+        frame = cv2.rectangle(frame,
+                              (left, top),
+                              (left + width, height + top),
+                              (0, 0, 255), 2)
+    return frame
         
 @app.route('/video_feed')
 def video_feed():
