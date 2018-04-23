@@ -30,7 +30,8 @@ def index():
     return Response(gen(),
                     mimetype='multipart/x-mixed-replace; boundary=frame')
 
-def gen(camera):
+# def gen(camera):
+def gen():
     while True:
         frame = camera.get_frame()
         yield (b'--frame\r\n'
