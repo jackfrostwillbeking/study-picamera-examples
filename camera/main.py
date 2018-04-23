@@ -23,10 +23,6 @@ time.sleep(0.1)
 app = Flask(__name__)
 
 # video_camera = VideoCamera(flip=False)
-class Const(object):
-    CAMERA_DEMO = os.getenv('CAMERA_DEMO', 'Cannot load the env')
-    message = CAMERA_DEMO
-    app.jinja_env.globals['test'] = message
 
 
 @app.route('/')
