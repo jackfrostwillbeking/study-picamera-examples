@@ -31,7 +31,7 @@ def index():
     message = CAMERA_DEMO
 #     return render_template('index.html', message=message)
     return Response(gen(),
-                    mimetype='multipart/x-mixed-replace; boundary=frame',render_template('index.html', message=message))
+                    mimetype='multipart/x-mixed-replace; boundary=frame';render_template('index.html', message=message))
 
 # def gen(camera):
 def gen():
