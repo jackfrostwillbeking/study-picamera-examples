@@ -21,6 +21,7 @@ rawCapture = PiRGBArray(camera, size=(640, 480))
 time.sleep(0.1)
 
 app = Flask(__name__)
+dic = {}
 
 # video_camera = VideoCamera(flip=False)
 
@@ -52,15 +53,12 @@ def get_frame():
 
 def decode(frame):
     decoded_objs = pyzbar.decode(frame, scan_locations=True)
-    dic = {}
     for obj in decoded_objs:
         print(datetime.now().strftime('%H:%M:%S.%f'))
         print('Type: ', obj.type)
         print('Data: ', obj.data)
         dic.update = obj.data
         
-    cv2.putText(frame,dic,(left,left - 1),cv2.FONT_HERSHEY_PLAIN, 3,(0, 0, 255))
-
     return decoded_objs
 
 def display(frame, decoded_objs):
