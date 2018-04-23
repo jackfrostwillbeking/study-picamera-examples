@@ -6,6 +6,11 @@ import time
 import threading
 import os
 
+from pyzbar import pyzbar
+from picamera.array import PiRGBArray
+from picamera import PiCamera
+from datetime import datetime
+
 video_camera = VideoCamera(flip=False)
 
 
