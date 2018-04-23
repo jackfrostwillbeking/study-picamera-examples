@@ -25,9 +25,9 @@ class Const(object):
     CAMERA_DEMO = os.getenv('CAMERA_DEMO', 'Cannot load the env')
     message = CAMERA_DEMO
 
+app = Flask(__name__)
 app.jinja_env.globals.update(message.__dict__)
 
-app = Flask(__name__)
 
 @app.route('/')
 def index():
