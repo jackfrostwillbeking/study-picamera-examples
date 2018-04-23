@@ -20,13 +20,13 @@ camera.framerate = 32
 rawCapture = PiRGBArray(camera, size=(640, 480))
 time.sleep(0.1)
 
+app = Flask(__name__)
+
 # video_camera = VideoCamera(flip=False)
 class Const(object):
     CAMERA_DEMO = os.getenv('CAMERA_DEMO', 'Cannot load the env')
     message = CAMERA_DEMO
-
-app = Flask(__name__)
-app.jinja_env.globals.update(message.__dict__)
+    app.jinja_env.globals.update(message.__dict__)
 
 
 @app.route('/')
