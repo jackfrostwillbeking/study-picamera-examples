@@ -64,13 +64,13 @@ def decode(frame):
 
 def display(frame, decoded_objs):
     for decoded_obj in decoded_objs:
-        global dic
+#         global dic
         left, top, width, height = decoded_obj.rect
         frame = cv2.rectangle(frame,
                               (left, top),
                               (left + width, height + top),
                               (0, 0, 255), 2)
-        dic = dic.decode('utf-8')
+        dic = decoded_obj.data.decode('utf-8')
 #         dic = dic[1:]
         cv2.putText(frame,dic,(left,top),cv2.FONT_HERSHEY_PLAIN, 2,(0, 0, 255))
 
