@@ -57,7 +57,7 @@ def decode(frame):
         print(datetime.now().strftime('%H:%M:%S.%f'))
         print('Type: ', obj.type)
         print('Data: ', obj.data)
-        dic.__setitem__(self, key, obj.data)
+        dic = obj.data
         
     return decoded_objs
 
