@@ -47,6 +47,15 @@ def get_frame():
     rawCapture.truncate(0)
 
     return jpeg.tobytes()
+
+def decode(frame):
+    decoded_objs = pyzbar.decode(frame, scan_locations=True)
+    for obj in decoded_objs:
+        print(datetime.now().strftime('%H:%M:%S.%f'))
+        print('Type: ', obj.type)
+        print('Data: ', obj.data)
+    
+    return decoded_objs
         
 @app.route('/video_feed')
 def video_feed():
