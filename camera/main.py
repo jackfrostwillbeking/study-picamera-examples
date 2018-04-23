@@ -14,6 +14,9 @@ import numpy as np
 import cv2
 import time
 
+from common.const import Const
+
+
 camera = PiCamera()
 camera.resolution = (640, 480)
 camera.framerate = 32
@@ -21,16 +24,19 @@ rawCapture = PiRGBArray(camera, size=(640, 480))
 time.sleep(0.1)
 
 # video_camera = VideoCamera(flip=False)
+class Const(object):
+    CAMERA_DEMO = os.getenv('CAMERA_DEMO', 'Cannot load the env')
+    message = CAMERA_DEMO
 
+app.jinja_env.globals.update(Const.__dict__)
 
 app = Flask(__name__)
 
 @app.route('/')
 def index():
-    CAMERA_DEMO = os.getenv('CAMERA_DEMO', 'Cannot load the env')
-    message = CAMERA_DEMO
+#     CAMERA_DEMO = os.getenv('CAMERA_DEMO', 'Cannot load the env')
+#     message = CAMERA_DEMO
 #     return render_template('index.html', message=message)
-    app.test = message
     return Response(gen(),
                     mimetype='multipart/x-mixed-replace; boundary=frame')
 
