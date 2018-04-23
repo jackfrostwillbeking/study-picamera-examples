@@ -11,6 +11,12 @@ from picamera.array import PiRGBArray
 from picamera import PiCamera
 from datetime import datetime
 
+camera = PiCamera()
+camera.resolution = (640, 480)
+camera.framerate = 32
+rawCapture = PiRGBArray(camera, size=(640, 480))
+time.sleep(0.1)
+
 video_camera = VideoCamera(flip=False)
 
 
@@ -18,9 +24,11 @@ app = Flask(__name__)
 
 @app.route('/')
 def index():
-    CAMERA_DEMO = os.getenv('CAMERA_DEMO', 'Cannot load the env')
-    message = CAMERA_DEMO
-    return render_template('index.html', message=message)
+#     CAMERA_DEMO = os.getenv('CAMERA_DEMO', 'Cannot load the env')
+#     message = CAMERA_DEMO
+#     return render_template('index.html', message=message)
+    return Response(gen(),
+                    mimetype='multipart/x-mixed-replace; boundary=frame')
 
 def gen(camera):
     while True:
