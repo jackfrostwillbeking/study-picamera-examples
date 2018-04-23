@@ -46,6 +46,7 @@ def get_frame():
     frame = rawCapture.array
     decoded_objs = decode(frame)
     frame = display(frame, decoded_objs)
+    cv2.putText(frame,dic,(left,left - 1),cv2.FONT_HERSHEY_PLAIN, 3,(0, 0, 255))
     ret, jpeg = cv2.imencode('.jpg', frame)
     rawCapture.truncate(0)
 
