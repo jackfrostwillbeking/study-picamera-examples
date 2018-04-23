@@ -52,11 +52,12 @@ def get_frame():
 
 def decode(frame):
     decoded_objs = pyzbar.decode(frame, scan_locations=True)
+    dic = {}
     for obj in decoded_objs:
         print(datetime.now().strftime('%H:%M:%S.%f'))
         print('Type: ', obj.type)
         print('Data: ', obj.data)
-        dic{} = obj.data
+        dic = obj.data
         
     cv2.putText(frame,dic,(left,left - 1),cv2.FONT_HERSHEY_PLAIN, 3,(0, 0, 255))
 
