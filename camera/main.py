@@ -31,11 +31,10 @@ class Const(object):
 
 @app.route('/')
 def index():
-#     CAMERA_DEMO = os.getenv('CAMERA_DEMO', 'Cannot load the env')
-#     message = CAMERA_DEMO
-#     return render_template('index.html', message=message)
-    return Response(gen(),
-                    mimetype='multipart/x-mixed-replace; boundary=frame')
+    CAMERA_DEMO = os.getenv('CAMERA_DEMO', 'Cannot load the env')
+    message = CAMERA_DEMO
+    return render_template('index.html', message=message)
+
 
 # def gen(camera):
 def gen():
@@ -73,10 +72,12 @@ def display(frame, decoded_objs):
                               (0, 0, 255), 2)
     return frame
         
-# @app.route('/video_feed')
-# def video_feed():
+@app.route('/video_feed')
+def video_feed():
 #     return Response(gen(video_camera),
 #                     mimetype='multipart/x-mixed-replace; boundary=frame')
+    return Response(gen(),
+                    mimetype='multipart/x-mixed-replace; boundary=frame')
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', debug=False, threaded=True)
