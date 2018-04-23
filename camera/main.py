@@ -66,7 +66,7 @@ def display(frame, decoded_objs):
                               (left, top),
                               (left + width, height + top),
                               (0, 0, 255), 2)
-        cv2.putText(frame,'text',(left,left + 1),cv2.FONT_HERSHEY_PLAIN, '1',(0, 0, 255))
+        cv2.putText(frame,'text',(left,left + 1),cv2.FONT_HERSHEY_PLAIN, 1,(0, 0, 255))
 
     return frame
         
