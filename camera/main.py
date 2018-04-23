@@ -21,7 +21,6 @@ rawCapture = PiRGBArray(camera, size=(640, 480))
 time.sleep(0.1)
 
 app = Flask(__name__)
-dic = ''
 
 # video_camera = VideoCamera(flip=False)
 
@@ -57,22 +56,18 @@ def decode(frame):
         print(datetime.now().strftime('%H:%M:%S.%f'))
         print('Type: ', obj.type)
         print('Data: ', obj.data)
-        global dic
-        dic = obj.data
         
     return decoded_objs
 
 def display(frame, decoded_objs):
-    for decoded_obj in decoded_objs:
-#         global dic
-        left, top, width, height = decoded_obj.rect
+    for obj in decoded_objs:
+        left, top, width, height = obj.rect
         frame = cv2.rectangle(frame,
                               (left, top),
                               (left + width, height + top),
                               (0, 0, 255), 2)
-        dic = decoded_obj.data.decode('utf-8')
-#         dic = dic[1:]
-        cv2.putText(frame,dic,(left,top),cv2.FONT_HERSHEY_PLAIN, 2,(0, 0, 255))
+        data = obj.data.decode('utf-8')
+        cv2.putText(frame,data,(left,top),cv2.FONT_HERSHEY_PLAIN, 2,(0, 0, 255))
 
     return frame
         
