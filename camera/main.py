@@ -17,7 +17,7 @@ camera.framerate = 32
 rawCapture = PiRGBArray(camera, size=(640, 480))
 time.sleep(0.1)
 
-video_camera = VideoCamera(flip=False)
+# video_camera = VideoCamera(flip=False)
 
 
 app = Flask(__name__)
