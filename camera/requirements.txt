@@ -1,3 +1,5 @@
 imutils
 flask
 picamera[array]
+numpy
+opencv-python
