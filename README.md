@@ -3,8 +3,22 @@ A collection of picamera example based on OpenCV
 
 # requirements
 
-* python 2.7
-* OpenCV 2.4
+* python 3.5
+* OpenCV 3.4
+
+```
+sudo apt-get update && sudo apt-get upgrade
+sudo apt-get install build-essential cmake pkg-config
+sudo apt-get install libjpeg-dev libtiff5-dev libjasper-dev libpng12-dev
+sudo apt-get install libavcodec-dev libavformat-dev libswscale-dev libv4l-dev
+sudo apt-get install libxvidcore-dev libx264-dev
+sudo apt-get install libgtk2.0-dev libgtk-3-dev
+sudo apt-get install libatlas-base-dev gfortran
+sudo apt-get install python3-dev python3-pip
+sudo pip3 install numpy opencv-python picamera[array] imutils flask
+sudo apt install libqtgui4 libqt4-test
+sudo apt install libilmbase12 libopenexr22 libgstreamer1.0-dev
+```
 
 # installation
 
