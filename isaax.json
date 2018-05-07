@@ -1,13 +1,6 @@
 {
-  "name": "pifeed",
-  "version": "1.2",
-  "description": "",
-  "main": "main.py",
-  "author": "",
-  "license": "",
-  "language":"python",
+  "description": "python - raspberry-pi",
   "scripts": {
 	"start": "python3 -u camera/main.py"
-  },
-  "dependency": null
+  }
 }
