@@ -39,6 +39,7 @@ class PedestrianDetector(object):
         rects = np.array([[x, y, x + w, y + h] for (x, y, w, h) in rects])
         pick = non_max_suppression(rects, probs=None, overlapThresh=0.65)
         print (rects)
+        global persons
         persons += len(rects)
         print (persons)
         
