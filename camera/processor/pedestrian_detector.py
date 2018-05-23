@@ -7,6 +7,7 @@ import datetime
 import numpy as np
 import cv2
 
+persons = 0
 
 class PedestrianDetector(object):
     def __init__(self, flip = True):
