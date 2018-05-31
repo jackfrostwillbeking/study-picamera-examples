@@ -7,7 +7,7 @@ import cv2
 
 class SimpleStreamer(object):
     def __init__(self, flip = False):
-        self.vs = PiVideoStream(resolution=(200, 151),framerate=1).start()
+        self.vs = PiVideoStream(resolution=(400, 304),framerate=1).start()
         self.flip = flip
         time.sleep(2.0)
 
